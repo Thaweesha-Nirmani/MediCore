@@ -1,0 +1,39 @@
+{
+  "name": "medicore-mobile",
+  "private": true,
+  "version": "0.1.0",
+  "main": "expo-router/entry",
+  "description": "Mobile client for the MediCore pharmacy system built with Expo and React Native.",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node ../scripts/qa/mobile-smoke.js"
+  },
+  "dependencies": {
+    "@react-navigation/native": "^7.1.33",
+    "@tanstack/react-query": "5.96.2",
+    "axios": "1.14.0",
+    "expo": "55.0.11",
+    "expo-blur": "~55.0.9",
+    "expo-constants": "~55.0.11",
+    "expo-linear-gradient": "~55.0.8",
+    "expo-linking": "~55.0.11",
+    "expo-router": "55.0.10",
+    "expo-secure-store": "55.0.11",
+    "expo-status-bar": "55.0.5",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.4",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0",
+    "react-native-web": "0.21.2",
+    "zustand": "5.0.12"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "typescript": "~5.9.2"
+  }
+}

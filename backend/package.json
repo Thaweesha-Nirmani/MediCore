@@ -1,0 +1,25 @@
+{
+  "name": "th-mobile-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mobile-ready API backend scaffold for the TH pharmacy system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=DEP0040 server.js",
+    "dev": "nodemon server.js",
+    "smoke": "node --disable-warning=DEP0040 ../scripts/qa/backend-smoke.js",
+    "ensure:admin": "node --disable-warning=DEP0040 scripts/ensure-admin.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.3.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^7.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

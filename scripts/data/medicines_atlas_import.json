@@ -1,0 +1,1142 @@
+[
+  {
+    "medicineId": "REAL-MED-1",
+    "medicine_id": 1,
+    "name": "Panadol (Paracetamol)",
+    "brand_name": "Panadol",
+    "generic_name": "Paracetamol",
+    "manufacturer": "GSK",
+    "supplier": "GSK",
+    "supplierId": "GSK",
+    "category": "Analgesic",
+    "dosageStrength": "Standard",
+    "price": 137.2,
+    "unit_price_LKR": 137.2,
+    "quantity": 2975,
+    "stock": 2975,
+    "stock_qty": 2975,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 3,
+    "batchNumber": "B1-1",
+    "batchNo": "B1-1",
+    "sku": "SKU-1",
+    "manufactureDate": {
+      "$date": "2024-10-23T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-10-23T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 23,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-2",
+    "medicine_id": 2,
+    "name": "Calpol (Paracetamol)",
+    "brand_name": "Calpol",
+    "generic_name": "Paracetamol",
+    "manufacturer": "GSK",
+    "supplier": "GSK",
+    "supplierId": "GSK",
+    "category": "Analgesic",
+    "dosageStrength": "Standard",
+    "price": 159.93,
+    "unit_price_LKR": 159.93,
+    "quantity": 419,
+    "stock": 419,
+    "stock_qty": 419,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B2-2",
+    "batchNo": "B2-2",
+    "sku": "SKU-2",
+    "manufactureDate": {
+      "$date": "2024-12-20T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-12-20T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 26,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-3",
+    "medicine_id": 3,
+    "name": "SPMC Paracetamol (Paracetamol)",
+    "brand_name": "SPMC Paracetamol",
+    "generic_name": "Paracetamol",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Analgesic",
+    "dosageStrength": "Standard",
+    "price": 114.11,
+    "unit_price_LKR": 114.11,
+    "quantity": 2779,
+    "stock": 2779,
+    "stock_qty": 2779,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 5,
+    "batchNumber": "B3-1",
+    "batchNo": "B3-1",
+    "sku": "SKU-3",
+    "manufactureDate": {
+      "$date": "2024-11-19T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-19T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 31,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-4",
+    "medicine_id": 4,
+    "name": "Cevit (Vitamin C)",
+    "brand_name": "Cevit",
+    "generic_name": "Vitamin C",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Supplement",
+    "dosageStrength": "Standard",
+    "price": 73.99,
+    "unit_price_LKR": 73.99,
+    "quantity": 2877,
+    "stock": 2877,
+    "stock_qty": 2877,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B4-2",
+    "batchNo": "B4-2",
+    "sku": "SKU-4",
+    "manufactureDate": {
+      "$date": "2025-02-13T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-02-13T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 39,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-5",
+    "medicine_id": 5,
+    "name": "Redoxon (Vitamin C)",
+    "brand_name": "Redoxon",
+    "generic_name": "Vitamin C",
+    "manufacturer": "Bayer",
+    "supplier": "Bayer",
+    "supplierId": "Bayer",
+    "category": "Supplement",
+    "dosageStrength": "Standard",
+    "price": 174.23,
+    "unit_price_LKR": 174.23,
+    "quantity": 2166,
+    "stock": 2166,
+    "stock_qty": 2166,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 7,
+    "batchNumber": "B5-2",
+    "batchNo": "B5-2",
+    "sku": "SKU-5",
+    "manufactureDate": {
+      "$date": "2025-03-04T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-03-04T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 24,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-6",
+    "medicine_id": 6,
+    "name": "Vitamin C Tablets (Vitamin C)",
+    "brand_name": "Vitamin C Tablets",
+    "generic_name": "Vitamin C",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Supplement",
+    "dosageStrength": "Standard",
+    "price": 152.72,
+    "unit_price_LKR": 152.72,
+    "quantity": 1901,
+    "stock": 1901,
+    "stock_qty": 1901,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 7,
+    "batchNumber": "B6-1",
+    "batchNo": "B6-1",
+    "sku": "SKU-6",
+    "manufactureDate": {
+      "$date": "2024-10-28T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2026-10-28T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 28,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-7",
+    "medicine_id": 7,
+    "name": "Lipitor (Atorvastatin)",
+    "brand_name": "Lipitor",
+    "generic_name": "Atorvastatin",
+    "manufacturer": "Pfizer",
+    "supplier": "Pfizer",
+    "supplierId": "Pfizer",
+    "category": "Cholesterol",
+    "dosageStrength": "Standard",
+    "price": 159.24,
+    "unit_price_LKR": 159.24,
+    "quantity": 1694,
+    "stock": 1694,
+    "stock_qty": 1694,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 5,
+    "batchNumber": "B7-1",
+    "batchNo": "B7-1",
+    "sku": "SKU-7",
+    "manufactureDate": {
+      "$date": "2024-11-08T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-08T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 14,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-8",
+    "medicine_id": 8,
+    "name": "Atorva (Atorvastatin)",
+    "brand_name": "Atorva",
+    "generic_name": "Atorvastatin",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Cholesterol",
+    "dosageStrength": "Standard",
+    "price": 243.93,
+    "unit_price_LKR": 243.93,
+    "quantity": 13,
+    "stock": 13,
+    "stock_qty": 13,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 7,
+    "batchNumber": "B8-2",
+    "batchNo": "B8-2",
+    "sku": "SKU-8",
+    "manufactureDate": {
+      "$date": "2024-12-22T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-12-22T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 12,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-9",
+    "medicine_id": 9,
+    "name": "Atorvastatin Tablets (Atorvastatin)",
+    "brand_name": "Atorvastatin Tablets",
+    "generic_name": "Atorvastatin",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Cholesterol",
+    "dosageStrength": "Standard",
+    "price": 107.57,
+    "unit_price_LKR": 107.57,
+    "quantity": 882,
+    "stock": 882,
+    "stock_qty": 882,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 7,
+    "batchNumber": "B9-2",
+    "batchNo": "B9-2",
+    "sku": "SKU-9",
+    "manufactureDate": {
+      "$date": "2025-02-21T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2028-02-21T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 13,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-10",
+    "medicine_id": 10,
+    "name": "Norvasc (Amlodipine)",
+    "brand_name": "Norvasc",
+    "generic_name": "Amlodipine",
+    "manufacturer": "Pfizer",
+    "supplier": "Pfizer",
+    "supplierId": "Pfizer",
+    "category": "Blood Pressure",
+    "dosageStrength": "Standard",
+    "price": 75.43,
+    "unit_price_LKR": 75.43,
+    "quantity": 870,
+    "stock": 870,
+    "stock_qty": 870,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B10-2",
+    "batchNo": "B10-2",
+    "sku": "SKU-10",
+    "manufactureDate": {
+      "$date": "2024-10-29T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-10-29T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 16,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-11",
+    "medicine_id": 11,
+    "name": "Amlodipine Tablets (Amlodipine)",
+    "brand_name": "Amlodipine Tablets",
+    "generic_name": "Amlodipine",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Blood Pressure",
+    "dosageStrength": "Standard",
+    "price": 95.2,
+    "unit_price_LKR": 95.2,
+    "quantity": 1332,
+    "stock": 1332,
+    "stock_qty": 1332,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 5,
+    "batchNumber": "B11-2",
+    "batchNo": "B11-2",
+    "sku": "SKU-11",
+    "manufactureDate": {
+      "$date": "2024-10-26T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-10-26T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 8,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-12",
+    "medicine_id": 12,
+    "name": "Amlodac (Amlodipine)",
+    "brand_name": "Amlodac",
+    "generic_name": "Amlodipine",
+    "manufacturer": "Local",
+    "supplier": "Local",
+    "supplierId": "Local",
+    "category": "Blood Pressure",
+    "dosageStrength": "Standard",
+    "price": 119.97,
+    "unit_price_LKR": 119.97,
+    "quantity": 1459,
+    "stock": 1459,
+    "stock_qty": 1459,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B12-2",
+    "batchNo": "B12-2",
+    "sku": "SKU-12",
+    "manufactureDate": {
+      "$date": "2024-11-16T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-16T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 27,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-13",
+    "medicine_id": 13,
+    "name": "Glucophage (Metformin)",
+    "brand_name": "Glucophage",
+    "generic_name": "Metformin",
+    "manufacturer": "Merck",
+    "supplier": "Merck",
+    "supplierId": "Merck",
+    "category": "Diabetes",
+    "dosageStrength": "Standard",
+    "price": 90.35,
+    "unit_price_LKR": 90.35,
+    "quantity": 498,
+    "stock": 498,
+    "stock_qty": 498,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 5,
+    "batchNumber": "B13-2",
+    "batchNo": "B13-2",
+    "sku": "SKU-13",
+    "manufactureDate": {
+      "$date": "2025-02-04T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2028-02-04T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 10,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-14",
+    "medicine_id": 14,
+    "name": "Metformin Tablets (Metformin)",
+    "brand_name": "Metformin Tablets",
+    "generic_name": "Metformin",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Diabetes",
+    "dosageStrength": "Standard",
+    "price": 208.62,
+    "unit_price_LKR": 208.62,
+    "quantity": 1564,
+    "stock": 1564,
+    "stock_qty": 1564,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 7,
+    "batchNumber": "B14-2",
+    "batchNo": "B14-2",
+    "sku": "SKU-14",
+    "manufactureDate": {
+      "$date": "2024-11-22T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-22T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 12,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-15",
+    "medicine_id": 15,
+    "name": "Glycomet (Metformin)",
+    "brand_name": "Glycomet",
+    "generic_name": "Metformin",
+    "manufacturer": "USV",
+    "supplier": "USV",
+    "supplierId": "USV",
+    "category": "Diabetes",
+    "dosageStrength": "Standard",
+    "price": 208.73,
+    "unit_price_LKR": 208.73,
+    "quantity": 1153,
+    "stock": 1153,
+    "stock_qty": 1153,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 5,
+    "batchNumber": "B15-1",
+    "batchNo": "B15-1",
+    "sku": "SKU-15",
+    "manufactureDate": {
+      "$date": "2024-11-06T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-06T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 18,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-16",
+    "medicine_id": 16,
+    "name": "Augmentin (Amoxicillin)",
+    "brand_name": "Augmentin",
+    "generic_name": "Amoxicillin",
+    "manufacturer": "GSK",
+    "supplier": "GSK",
+    "supplierId": "GSK",
+    "category": "Antibiotic",
+    "dosageStrength": "Standard",
+    "price": 82.46,
+    "unit_price_LKR": 82.46,
+    "quantity": 1389,
+    "stock": 1389,
+    "stock_qty": 1389,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B16-1",
+    "batchNo": "B16-1",
+    "sku": "SKU-16",
+    "manufactureDate": {
+      "$date": "2024-11-07T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2026-11-07T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 20,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-17",
+    "medicine_id": 17,
+    "name": "Amoxicillin Capsules (Amoxicillin)",
+    "brand_name": "Amoxicillin Capsules",
+    "generic_name": "Amoxicillin",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Antibiotic",
+    "dosageStrength": "Standard",
+    "price": 242.91,
+    "unit_price_LKR": 242.91,
+    "quantity": 190,
+    "stock": 190,
+    "stock_qty": 190,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 3,
+    "batchNumber": "B17-2",
+    "batchNo": "B17-2",
+    "sku": "SKU-17",
+    "manufactureDate": {
+      "$date": "2025-02-11T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-02-11T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 8,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-18",
+    "medicine_id": 18,
+    "name": "Amoxil (Amoxicillin)",
+    "brand_name": "Amoxil",
+    "generic_name": "Amoxicillin",
+    "manufacturer": "GSK",
+    "supplier": "GSK",
+    "supplierId": "GSK",
+    "category": "Antibiotic",
+    "dosageStrength": "Standard",
+    "price": 118.32,
+    "unit_price_LKR": 118.32,
+    "quantity": 940,
+    "stock": 940,
+    "stock_qty": 940,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 3,
+    "batchNumber": "B18-1",
+    "batchNo": "B18-1",
+    "sku": "SKU-18",
+    "manufactureDate": {
+      "$date": "2024-11-04T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2026-11-04T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 19,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-19",
+    "medicine_id": 19,
+    "name": "Piriton (Chlorphenamine)",
+    "brand_name": "Piriton",
+    "generic_name": "Chlorphenamine",
+    "manufacturer": "GSK",
+    "supplier": "GSK",
+    "supplierId": "GSK",
+    "category": "Allergy",
+    "dosageStrength": "Standard",
+    "price": 135.51,
+    "unit_price_LKR": 135.51,
+    "quantity": 35,
+    "stock": 35,
+    "stock_qty": 35,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 7,
+    "batchNumber": "B19-1",
+    "batchNo": "B19-1",
+    "sku": "SKU-19",
+    "manufactureDate": {
+      "$date": "2024-10-22T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-10-22T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 10,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-20",
+    "medicine_id": 20,
+    "name": "Chlorphenamine Tablets (Chlorphenamine)",
+    "brand_name": "Chlorphenamine Tablets",
+    "generic_name": "Chlorphenamine",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Allergy",
+    "dosageStrength": "Standard",
+    "price": 205.31,
+    "unit_price_LKR": 205.31,
+    "quantity": 793,
+    "stock": 793,
+    "stock_qty": 793,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 5,
+    "batchNumber": "B20-2",
+    "batchNo": "B20-2",
+    "sku": "SKU-20",
+    "manufactureDate": {
+      "$date": "2024-11-21T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-21T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 6,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-21",
+    "medicine_id": 21,
+    "name": "Allermine (Chlorphenamine)",
+    "brand_name": "Allermine",
+    "generic_name": "Chlorphenamine",
+    "manufacturer": "Local",
+    "supplier": "Local",
+    "supplierId": "Local",
+    "category": "Allergy",
+    "dosageStrength": "Standard",
+    "price": 240.75,
+    "unit_price_LKR": 240.75,
+    "quantity": 184,
+    "stock": 184,
+    "stock_qty": 184,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B21-1",
+    "batchNo": "B21-1",
+    "sku": "SKU-21",
+    "manufactureDate": {
+      "$date": "2024-11-17T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-17T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 3,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-22",
+    "medicine_id": 22,
+    "name": "Losec (Omeprazole)",
+    "brand_name": "Losec",
+    "generic_name": "Omeprazole",
+    "manufacturer": "AstraZeneca",
+    "supplier": "AstraZeneca",
+    "supplierId": "AstraZeneca",
+    "category": "Gastritis",
+    "dosageStrength": "Standard",
+    "price": 239.62,
+    "unit_price_LKR": 239.62,
+    "quantity": 1912,
+    "stock": 1912,
+    "stock_qty": 1912,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 3,
+    "batchNumber": "B22-1",
+    "batchNo": "B22-1",
+    "sku": "SKU-22",
+    "manufactureDate": {
+      "$date": "2024-11-16T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-16T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 12,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-23",
+    "medicine_id": 23,
+    "name": "Omeprazole Capsules (Omeprazole)",
+    "brand_name": "Omeprazole Capsules",
+    "generic_name": "Omeprazole",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Gastritis",
+    "dosageStrength": "Standard",
+    "price": 153.03,
+    "unit_price_LKR": 153.03,
+    "quantity": 939,
+    "stock": 939,
+    "stock_qty": 939,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 5,
+    "batchNumber": "B23-2",
+    "batchNo": "B23-2",
+    "sku": "SKU-23",
+    "manufactureDate": {
+      "$date": "2024-11-13T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-13T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 9,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-24",
+    "medicine_id": 24,
+    "name": "Omez (Omeprazole)",
+    "brand_name": "Omez",
+    "generic_name": "Omeprazole",
+    "manufacturer": "Dr Reddy",
+    "supplier": "Dr Reddy",
+    "supplierId": "Dr Reddy",
+    "category": "Gastritis",
+    "dosageStrength": "Standard",
+    "price": 199.33,
+    "unit_price_LKR": 199.33,
+    "quantity": 637,
+    "stock": 637,
+    "stock_qty": 637,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 7,
+    "batchNumber": "B24-2",
+    "batchNo": "B24-2",
+    "sku": "SKU-24",
+    "manufactureDate": {
+      "$date": "2025-01-13T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2028-01-13T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 10,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-25",
+    "medicine_id": 25,
+    "name": "Cozaar (Losartan)",
+    "brand_name": "Cozaar",
+    "generic_name": "Losartan",
+    "manufacturer": "MSD",
+    "supplier": "MSD",
+    "supplierId": "MSD",
+    "category": "Blood Pressure",
+    "dosageStrength": "Standard",
+    "price": 227.66,
+    "unit_price_LKR": 227.66,
+    "quantity": 894,
+    "stock": 894,
+    "stock_qty": 894,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 3,
+    "batchNumber": "B25-1",
+    "batchNo": "B25-1",
+    "sku": "SKU-25",
+    "manufactureDate": {
+      "$date": "2024-11-09T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-09T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 21,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-26",
+    "medicine_id": 26,
+    "name": "Losartan Tablets (Losartan)",
+    "brand_name": "Losartan Tablets",
+    "generic_name": "Losartan",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Blood Pressure",
+    "dosageStrength": "Standard",
+    "price": 190.41,
+    "unit_price_LKR": 190.41,
+    "quantity": 433,
+    "stock": 433,
+    "stock_qty": 433,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 7,
+    "batchNumber": "B26-1",
+    "batchNo": "B26-1",
+    "sku": "SKU-26",
+    "manufactureDate": {
+      "$date": "2024-11-20T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-20T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 11,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-27",
+    "medicine_id": 27,
+    "name": "Losar (Losartan)",
+    "brand_name": "Losar",
+    "generic_name": "Losartan",
+    "manufacturer": "Local",
+    "supplier": "Local",
+    "supplierId": "Local",
+    "category": "Blood Pressure",
+    "dosageStrength": "Standard",
+    "price": 146.2,
+    "unit_price_LKR": 146.2,
+    "quantity": 1636,
+    "stock": 1636,
+    "stock_qty": 1636,
+    "threshold": 80,
+    "restock_threshold": 80,
+    "lead_time_days": 3,
+    "batchNumber": "B27-2",
+    "batchNo": "B27-2",
+    "sku": "SKU-27",
+    "manufactureDate": {
+      "$date": "2025-03-11T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2028-03-11T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 13,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-28",
+    "medicine_id": 28,
+    "name": "Ventolin (Salbutamol)",
+    "brand_name": "Ventolin",
+    "generic_name": "Salbutamol",
+    "manufacturer": "GSK",
+    "supplier": "GSK",
+    "supplierId": "GSK",
+    "category": "Asthma",
+    "dosageStrength": "Standard",
+    "price": 135.2,
+    "unit_price_LKR": 135.2,
+    "quantity": 726,
+    "stock": 726,
+    "stock_qty": 726,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 5,
+    "batchNumber": "B28-1",
+    "batchNo": "B28-1",
+    "sku": "SKU-28",
+    "manufactureDate": {
+      "$date": "2024-11-01T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2027-11-01T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 24,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-29",
+    "medicine_id": 29,
+    "name": "Salbutamol Tablets (Salbutamol)",
+    "brand_name": "Salbutamol Tablets",
+    "generic_name": "Salbutamol",
+    "manufacturer": "SPMC",
+    "supplier": "SPMC",
+    "supplierId": "SPMC",
+    "category": "Asthma",
+    "dosageStrength": "Standard",
+    "price": 236.53,
+    "unit_price_LKR": 236.53,
+    "quantity": 1156,
+    "stock": 1156,
+    "stock_qty": 1156,
+    "threshold": 120,
+    "restock_threshold": 120,
+    "lead_time_days": 7,
+    "batchNumber": "B29-2",
+    "batchNo": "B29-2",
+    "sku": "SKU-29",
+    "manufactureDate": {
+      "$date": "2025-03-10T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2028-03-10T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 8,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  },
+  {
+    "medicineId": "REAL-MED-30",
+    "medicine_id": 30,
+    "name": "Asthalin (Salbutamol)",
+    "brand_name": "Asthalin",
+    "generic_name": "Salbutamol",
+    "manufacturer": "Cipla",
+    "supplier": "Cipla",
+    "supplierId": "Cipla",
+    "category": "Asthma",
+    "dosageStrength": "Standard",
+    "price": 153.49,
+    "unit_price_LKR": 153.49,
+    "quantity": 1049,
+    "stock": 1049,
+    "stock_qty": 1049,
+    "threshold": 100,
+    "restock_threshold": 100,
+    "lead_time_days": 7,
+    "batchNumber": "B30-2",
+    "batchNo": "B30-2",
+    "sku": "SKU-30",
+    "manufactureDate": {
+      "$date": "2025-03-06T00:00:00.000Z"
+    },
+    "expiryDate": {
+      "$date": "2028-03-06T00:00:00.000Z"
+    },
+    "latestSaleDate": {
+      "$date": "2025-06-30T00:00:00.000Z"
+    },
+    "sales_qty": 20,
+    "month": 6,
+    "day_of_week": "Monday",
+    "is_weekend": false,
+    "status": "Active",
+    "active": true
+  }
+]

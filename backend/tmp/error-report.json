@@ -1,0 +1,17 @@
+{
+  "name": "MongooseServerSelectionError",
+  "message": "Server selection timed out after 5000 ms",
+  "reason": {
+    "type": "Unknown",
+    "servers": {},
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
