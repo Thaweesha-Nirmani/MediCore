@@ -22,6 +22,22 @@ const reviewsRoutes = require('./modules/reviews');
 const uploadsRoutes = require('./modules/uploads');
 
 const app = express();
+// ✅ ADD THIS LINE RIGHT HERE 👇
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'MediCore API is running',
+    status: 'healthy',
+    endpoints: {
+      health: '/health',
+      api: '/api/v1',
+      auth: '/api/v1/auth'
+    }
+  });
+});
+
+
+
 const jsonLimitMb = Math.max(2, Math.ceil(env.uploadMaxSizeBytes / (1024 * 1024)) + 2);
 
 app.use(cors(corsOptions));
