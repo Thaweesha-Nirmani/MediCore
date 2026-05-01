@@ -196,16 +196,10 @@ const autocomplete = [
 
 const duplicateCheck = [
   query('excludeId').optional().isMongoId(),
-  query('name').optional({ checkFalsy: true }).isString().trim().isLength({ max: 160 }),
-  query('genericName').optional({ checkFalsy: true }).isString().trim().isLength({ max: 160 }),
-  query('brandName').optional({ checkFalsy: true }).isString().trim().isLength({ max: 160 }),
-  query('q').optional({ checkFalsy: true }).isString().trim().isLength({ max: 160 }),
+  query('batchNumber').optional({ checkFalsy: true }).isString().trim().isLength({ max: 80 }),
   query().custom((value) => {
-    const hasQuery =
-      value.q || value.name || value.genericName || value.brandName;
-
-    if (!hasQuery) {
-      throw new Error('Provide q, name, genericName, or brandName for duplicate checking');
+    if (!value.batchNumber) {
+      throw new Error('Provide batchNumber for duplicate checking');
     }
 
     return true;

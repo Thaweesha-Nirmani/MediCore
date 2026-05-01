@@ -22,6 +22,11 @@ const autocompleteMedicines = asyncHandler(async (req, res) => {
   return ok(res, result.items, result.meta);
 });
 
+const autocompleteGenericNames = asyncHandler(async (req, res) => {
+  const result = await medicineService.autocompleteGenericNames(req.query);
+  return ok(res, result.items, result.meta);
+});
+
 const checkDuplicateMedicines = asyncHandler(async (req, res) => {
   const item = await medicineService.checkDuplicateMedicines(req.query);
   return ok(res, item);
@@ -61,6 +66,7 @@ module.exports = {
   getMedicineById,
   getMedicineByBarcode,
   autocompleteMedicines,
+  autocompleteGenericNames,
   checkDuplicateMedicines,
   createMedicine,
   updateMedicine,

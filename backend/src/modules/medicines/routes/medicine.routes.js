@@ -23,6 +23,13 @@ router.get(
 );
 
 router.get(
+  '/generic-names/autocomplete',
+  allowRoles(ROLES.ADMIN, ROLES.PHARMACIST, ROLES.INVENTORY_MANAGER, ROLES.CASHIER),
+  validators.autocomplete,
+  controller.autocompleteGenericNames
+);
+
+router.get(
   '/expiry/alerts',
   allowRoles(ROLES.ADMIN, ROLES.PHARMACIST, ROLES.INVENTORY_MANAGER, ROLES.CASHIER),
   controller.getExpiryAlerts

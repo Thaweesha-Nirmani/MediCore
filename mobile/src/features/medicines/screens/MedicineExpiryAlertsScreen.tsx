@@ -153,8 +153,8 @@ function ExpirySection({
       </View>
       {items.length ? (
         <View style={styles.sectionList}>
-          {items.map((item) => (
-            <MedicineListItem key={item.id} item={item} onPress={() => onOpen(item.id)} />
+          {items.map((item, index) => (
+            <MedicineListItem key={`${item.id}-${index}`} item={item} onPress={() => onOpen(item.id)} />
           ))}
         </View>
       ) : (

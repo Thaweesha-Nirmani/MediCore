@@ -35,6 +35,16 @@ export async function autocompleteMedicines(search: string, limit = 10) {
   return response.data.data;
 }
 
+export async function autocompleteGenericNames(search: string, limit = 10) {
+  const response = await apiClient.get<ApiSuccess<string[]>>(
+    '/medicines/generic-names/autocomplete',
+    {
+      params: { q: search, limit },
+    }
+  );
+  return response.data.data;
+}
+
 export async function getMedicineByBarcode(barcode: string) {
   const response = await apiClient.get<ApiSuccess<MedicineDetail>>(`/medicines/barcode/${barcode}`);
   return response.data.data;
@@ -46,9 +56,7 @@ export async function getExpiryAlerts() {
 }
 
 export async function checkMedicineDuplicates(params: {
-  name?: string;
-  genericName?: string;
-  brandName?: string;
+  batchNumber?: string;
   excludeId?: string;
 }) {
   const response = await apiClient.get<ApiSuccess<MedicineDuplicateCheckResponse>>(

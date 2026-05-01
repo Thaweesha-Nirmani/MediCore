@@ -20,17 +20,26 @@ function firstDefined(...values) {
 
 function resolveName(document) {
   return (
-    firstDefined(document.name, document.displayName, document.brandName, document.brand_name, document.genericName, document.generic_name) ||
-    'Unknown Medicine'
+    firstDefined(
+      document.name,
+      document.displayName,
+      document.brandName,
+      document.brand_name,
+      document.genericName,
+      document.generic_name,
+      document.medicine_name,
+      document.drug_name,
+      document.item_name
+    ) || 'Unknown Medicine'
   );
 }
 
 function resolveGenericName(document) {
-  return firstDefined(document.genericName, document.generic_name) || '';
+  return firstDefined(document.genericName, document.generic_name, document.generic_drug_name) || '';
 }
 
 function resolveBrandName(document) {
-  return firstDefined(document.brandName, document.brand_name) || '';
+  return firstDefined(document.brandName, document.brand_name, document.brand_drug_name) || '';
 }
 
 function resolveStrength(document) {
@@ -38,32 +47,63 @@ function resolveStrength(document) {
 }
 
 function resolveDosageForm(document) {
-  return firstDefined(document.dosageForm, document.dosage_form) || '';
+  return firstDefined(document.dosageForm, document.dosage_form, document.form) || '';
 }
 
 function resolvePrice(document) {
-  return firstDefined(document.unitPrice, document.price, document.unit_price_LKR) || 0;
+  return (
+    firstDefined(
+      document.unitPrice,
+      document.price,
+      document.unit_price_LKR,
+      document.selling_price,
+      document.retail_price
+    ) || 0
+  );
 }
 
 function resolveQuantity(document) {
-  return firstDefined(
-    document.inventorySnapshot?.stockOnHand,
-    document.quantity,
-    document.stock,
-    document.stock_qty
-  ) || 0;
+  return (
+    firstDefined(
+      document.inventorySnapshot?.stockOnHand,
+      document.quantity,
+      document.stock,
+      document.stock_qty,
+      document.stock_quantity,
+      document.current_stock,
+      document.on_hand
+    ) || 0
+  );
 }
 
 function resolveExpiryDate(document) {
-  return firstDefined(document.inventorySnapshot?.nextExpiryDate, document.expiryDate) || null;
+  return (
+    firstDefined(
+      document.inventorySnapshot?.nextExpiryDate,
+      document.expiryDate,
+      document.exp_date,
+      document.expiry_date
+    ) || null
+  );
 }
 
 function resolveManufactureDate(document) {
-  return firstDefined(document.manufactureDate, document.manufacture_date) || null;
+  return (
+    firstDefined(document.manufactureDate, document.manufacture_date, document.mfg_date) || null
+  );
 }
 
 function resolveBatchNumber(document) {
-  return firstDefined(document.inventorySnapshot?.batchNumber, document.batchNumber, document.batchNo, document.batch_id) || '';
+  return (
+    firstDefined(
+      document.inventorySnapshot?.batchNumber,
+      document.batchNumber,
+      document.batchNo,
+      document.batch_id,
+      document.batch_number,
+      document.lot_number
+    ) || ''
+  );
 }
 
 function toMedicineResponse(document) {

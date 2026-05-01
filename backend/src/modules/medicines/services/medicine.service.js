@@ -113,7 +113,13 @@ function buildStatusFilter(status) {
   const normalized = String(status).trim().toLowerCase();
 
   if (normalized === 'active') {
-    return { status: 'Active', active: true };
+    return {
+      $or: [
+        { status: 'Active', active: true },
+        { active: { $exists: false } },
+        { status: { $exists: false } }
+      ]
+    };
   }
 
   if (normalized === 'inactive') {
@@ -328,15 +334,6 @@ async function ensureNoDuplicateMedicine(normalizedPayload, excludeId = null) {
   }
 
   const duplicateMatches = await findDuplicateMatches(normalizedPayload, excludeId);
-  const blockingMatch = duplicateMatches.find((match) => match.blocking);
-
-  if (blockingMatch) {
-    throw new AppError('A very similar medicine already exists. Please review the suggested match.', 409, {
-      field: 'name',
-      blocking: true,
-      matches: duplicateMatches,
-    });
-  }
 
   return duplicateMatches;
 }
@@ -603,19 +600,100 @@ async function autocompleteMedicines(query) {
   };
 }
 
-async function checkDuplicateMedicines(query) {
-  const input = {
-    name: query.name || query.q || '',
-    genericName: query.genericName || query.q || '',
-    brandName: query.brandName || query.q || '',
-  };
-  const matches = await findDuplicateMatches(input, query.excludeId || null);
+async function autocompleteGenericNames(query) {
+  const limit = Math.min(Math.max(Number(query.limit) || 10, 1), 20);
+  const search = String(query.q || query.search || '').trim();
+
+  if (!search || search.length < 2) {
+    return { items: [], meta: { count: 0, limit, query: '' } };
+  }
+
+  const safeRegex = new RegExp(escapeRegex(search), 'i');
+
+  const pipeline = [
+    {
+      $match: {
+        $or: [{ isDeleted: false }, { isDeleted: { $exists: false } }],
+        $or: [{ genericName: safeRegex }, { generic_name: safeRegex }],
+      },
+    },
+    {
+      $group: {
+        _id: {
+          $cond: [
+            { $ifNull: ['$genericName', false] },
+            '$genericName',
+            '$generic_name'
+          ]
+        }
+      }
+    },
+    { $match: { _id: { $ne: null, $ne: '' } } },
+    { $limit: limit },
+    { $project: { _id: 0, name: '$_id' } },
+    { $sort: { name: 1 } }
+  ];
+
+  const results = await repository.aggregate(pipeline);
+  const items = results.map(r => r.name).filter(Boolean);
 
   return {
-    blocking: matches.some((match) => match.blocking),
-    count: matches.length,
-    matches,
-    query: input,
+    items,
+    meta: {
+      count: items.length,
+      limit,
+      query: search,
+    },
+  };
+}
+
+async function checkDuplicateMedicines(query) {
+  const batchNumber = String(query.batchNumber || '').trim().toUpperCase();
+  const excludeId = query.excludeId || null;
+
+  if (!batchNumber) {
+    return {
+      blocking: false,
+      count: 0,
+      matches: [],
+      query: { batchNumber },
+    };
+  }
+
+  const filter = {
+    batchNumber,
+    active: true,
+  };
+
+  if (excludeId) {
+    filter.medicineId = { $ne: excludeId };
+  }
+
+  const duplicateBatch = await inventoryRepository.findLeanOne(filter);
+
+  if (duplicateBatch) {
+    return {
+      blocking: true,
+      count: 1,
+      matches: [
+        {
+          id: String(duplicateBatch._id),
+          medicineId: duplicateBatch.medicineId,
+          name: `Batch ${duplicateBatch.batchNumber}`,
+          score: 1.0,
+          blocking: true,
+          matchReason: 'This batch number already exists in inventory',
+        },
+      ],
+      query: { batchNumber },
+    };
+  }
+
+  return {
+    blocking: false,
+    count: 0,
+    matches: [],
+    query: { batchNumber },
   };
 }
 
@@ -856,6 +934,7 @@ module.exports = {
   getMedicineById,
   getMedicineByBarcode,
   autocompleteMedicines,
+  autocompleteGenericNames,
   checkDuplicateMedicines,
   createMedicine,
   updateMedicine,

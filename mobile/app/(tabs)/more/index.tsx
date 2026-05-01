@@ -199,21 +199,7 @@ export default function MoreIndexRoute() {
               </View>
             </View>
 
-            <View
-              style={[
-                styles.noticeCard,
-                {
-                  backgroundColor: theme.colors.surfaceMuted,
-                  borderColor: theme.colors.borderStrong,
-                  borderRadius: theme.radius.lg,
-                },
-              ]}
-            >
-              <AppText variant="caption">
-                Only tools available to your current role are shown here, so unavailable manager
-                actions stay hidden instead of creating dead ends.
-              </AppText>
-            </View>
+
           </View>
         </AppCard>
 
@@ -221,7 +207,6 @@ export default function MoreIndexRoute() {
           <AppCard variant="subtle">
             <SectionHeader
               title={getPrimarySectionTitle(role)}
-              subtitle={getPrimarySectionSubtitle(role)}
             />
             <View style={styles.operationsList}>
               {primaryTasks.map((item) => (
@@ -247,7 +232,6 @@ export default function MoreIndexRoute() {
           <AppCard variant="subtle">
             <SectionHeader
               title={getOperationsSectionTitle(role)}
-              subtitle={getOperationsSectionSubtitle(role)}
             />
             <View style={styles.operationsList}>
               {operationsCards.map((item) => (
@@ -272,7 +256,6 @@ export default function MoreIndexRoute() {
         <AppCard variant="subtle">
           <SectionHeader
             title="Primary workspaces"
-            subtitle="Your visible tabs stay task-first and role-scoped for faster mobile movement."
           />
           <View style={styles.workspaceList}>
             {workspaces.map((item) => (
@@ -289,7 +272,6 @@ export default function MoreIndexRoute() {
         <AppCard variant="subtle">
           <SectionHeader
             title="Account summary"
-            subtitle="Quick session context without turning this hub into a settings dump."
           />
           <View style={styles.infoRow}>
             <AppText style={styles.infoLabel}>Session</AppText>
@@ -304,7 +286,6 @@ export default function MoreIndexRoute() {
         <AppCard variant="subtle">
           <SectionHeader
             title="Session and settings"
-            subtitle="Keep sign-out and session controls together so they are easy to find."
           />
           <View
             style={[
@@ -693,11 +674,11 @@ function getOperationsSectionSubtitle(role: Role) {
   return 'Secondary workflows grouped here so the main tabs stay focused.';
 }
 
-function SectionHeader({ title, subtitle }: { title: string; subtitle: string }) {
+function SectionHeader({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <View style={styles.sectionHeader}>
       <AppText variant="subtitle">{title}</AppText>
-      <AppText variant="caption">{subtitle}</AppText>
+      {subtitle ? <AppText variant="caption">{subtitle}</AppText> : null}
     </View>
   );
 }
@@ -726,7 +707,6 @@ function OperationCard({
       <View style={styles.operationCopy}>
         <AppText variant="caption">{caption}</AppText>
         <AppText variant="subtitle">{title}</AppText>
-        <AppText>{description}</AppText>
       </View>
       <View style={[styles.actionsRow, stackActions && styles.actionsRowStack]}>
         <AppButton label={primaryLabel} onPress={onPrimaryPress} style={styles.actionButton} />
@@ -759,7 +739,6 @@ function WorkspaceCard({
           <AppText style={styles.infoLabel}>{item.title}</AppText>
           {item.isDefault ? <AppText variant="caption">Default</AppText> : null}
         </View>
-        <AppText variant="caption">{item.description}</AppText>
       </View>
       <AppButton label="Open" variant="secondary" onPress={onPress} />
     </View>

@@ -51,15 +51,13 @@ export function MedicineFormScreen({ mode }: MedicineFormScreenProps) {
   const activeMutation = isEdit ? updateMutation : createMutation;
   const [values, setValues] = useState<MedicineFormValues>(createEmptyMedicineFormValues());
   const [errors, setErrors] = useState<Partial<Record<keyof MedicineFormValues, string>>>({});
-  const debouncedGenericName = useDebouncedValue(values.genericName.trim(), 250);
-  const debouncedBrandName = useDebouncedValue(values.brandName.trim(), 250);
+  const debouncedBatchNumber = useDebouncedValue(values.batchNumber.trim(), 250);
   const duplicateQuery = useMedicineDuplicateCheck(
     {
-      genericName: debouncedGenericName || undefined,
-      brandName: debouncedBrandName || undefined,
+      batchNumber: debouncedBatchNumber || undefined,
       excludeId: isEdit ? String(params.id || '') : undefined,
     },
-    !isEdit || Boolean(params.id)
+    Boolean(debouncedBatchNumber)
   );
 
   useEffect(() => {
@@ -70,8 +68,8 @@ export function MedicineFormScreen({ mode }: MedicineFormScreenProps) {
 
   const pageTitle = isEdit ? 'Update medicine record' : 'Add a new medicine';
   const pageDescription = isEdit
-    ? 'Adjust the medicine master safely, with stock, batch, supplier, and expiry details kept aligned.'
-    : 'Create the medicine and its first inventory-ready batch in a single clean workflow.';
+    ? 'Update medicine details and stock safely.'
+    : 'Add a new medicine to the inventory.';
 
   const mutationError = activeMutation.error
     ? getErrorMessage(activeMutation.error, 'Unable to save medicine.')
@@ -79,15 +77,14 @@ export function MedicineFormScreen({ mode }: MedicineFormScreenProps) {
   const isBusy = activeMutation.isPending || (isEdit && detailQuery.isLoading);
   const errorCount = Object.keys(errors).length;
   const duplicateMatches = duplicateQuery.data?.matches || [];
-  const hasBlockingDuplicate = Boolean(duplicateQuery.data?.blocking);
+  const hasDuplicates = duplicateMatches.length > 0;
   const canSubmit = useMemo(() => {
     const validationErrors = validateMedicineForm(values, { isEdit });
     return (
       Object.keys(validationErrors).length === 0 &&
-      !activeMutation.isPending &&
-      !hasBlockingDuplicate
+      !activeMutation.isPending
     );
-  }, [activeMutation.isPending, hasBlockingDuplicate, isEdit, values]);
+  }, [activeMutation.isPending, isEdit, values]);
 
   const canAccessForm = isEdit ? permissions.canEdit : permissions.canCreate;
 
@@ -139,7 +136,7 @@ export function MedicineFormScreen({ mode }: MedicineFormScreenProps) {
     const nextErrors = validateMedicineForm(values, { isEdit });
     setErrors(nextErrors);
 
-    if (Object.keys(nextErrors).length || hasBlockingDuplicate) {
+    if (Object.keys(nextErrors).length) {
       return;
     }
 
@@ -203,44 +200,46 @@ export function MedicineFormScreen({ mode }: MedicineFormScreenProps) {
                   Review the highlighted fields
                 </AppText>
                 <AppText variant="caption">
-                  {errorCount} field{errorCount === 1 ? '' : 's'} still need attention before
-                  saving.
+                  {errorCount} field{errorCount === 1 ? '' : 's'} still need attention:
                 </AppText>
+                {Array.from(new Set(Object.values(errors).filter(Boolean))).map((message, index) => (
+                  <AppText
+                    key={index}
+                    variant="caption"
+                    style={{ color: theme.colors.warning, marginTop: 2 }}
+                  >
+                    • {message}
+                  </AppText>
+                ))}
               </View>
             </View>
           </AppCard>
         ) : null}
 
-        {duplicateMatches.length ? (
+        {hasDuplicates ? (
           <AppCard
             variant="subtle"
             style={{
-              borderColor: hasBlockingDuplicate
-                ? `${theme.colors.warning}45`
-                : `${theme.colors.success}32`,
+              borderColor: `${theme.colors.warning}45`,
               borderWidth: 1,
             }}
           >
             <View style={styles.feedbackCopy}>
               <View style={styles.duplicateHeader}>
                 <Ionicons
-                  color={hasBlockingDuplicate ? theme.colors.warning : theme.colors.success}
-                  name={hasBlockingDuplicate ? 'warning-outline' : 'checkmark-circle-outline'}
+                  color={theme.colors.warning}
+                  name="warning-outline"
                   size={18}
                 />
                 <AppText
                   variant="label"
-                  style={{ color: hasBlockingDuplicate ? theme.colors.warning : theme.colors.success }}
+                  style={{ color: theme.colors.warning }}
                 >
-                  {hasBlockingDuplicate
-                    ? 'Possible duplicate medicine detected'
-                    : 'Similar medicines found'}
+                  Batch number in use
                 </AppText>
               </View>
               <AppText variant="caption">
-                {hasBlockingDuplicate
-                  ? 'This save is blocked until you confirm the medicine is truly different.'
-                  : 'Review these similar records before saving so the catalog stays clean.'}
+                This batch number already exists in inventory. Continuing will attempt to save, but may be blocked if the batch number isn't unique.
               </AppText>
               <View style={styles.duplicateList}>
                 {duplicateMatches.map((match) => (
@@ -305,10 +304,6 @@ export function MedicineFormScreen({ mode }: MedicineFormScreenProps) {
             <View style={styles.footerCopy}>
               <AppText variant="subtitle">
                 {isEdit ? 'Ready to update this medicine?' : 'Ready to create this medicine?'}
-              </AppText>
-              <AppText variant="caption">
-                Medicines now create an initial inventory-ready batch, so price, stock, expiry, and
-                supplier stay in one clear flow.
               </AppText>
             </View>
             <View style={[styles.footerButtons, !responsive.isMdUp && styles.actionsStack]}>

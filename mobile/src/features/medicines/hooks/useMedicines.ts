@@ -5,6 +5,7 @@ import { queryKeys } from '@/constants/query-keys';
 
 import {
   archiveMedicine,
+  autocompleteGenericNames,
   autocompleteMedicines,
   checkMedicineDuplicates,
   createMedicine,
@@ -69,16 +70,24 @@ export function useMedicineAutocomplete(search: string, limit = 8) {
   });
 }
 
+export function useGenericNameAutocomplete(search: string, limit = 8) {
+  const normalizedSearch = search.trim();
+
+  return useQuery({
+    enabled: normalizedSearch.length >= 2,
+    queryKey: ['medicines', 'generic-names', 'autocomplete', normalizedSearch, limit],
+    queryFn: () => autocompleteGenericNames(normalizedSearch, limit),
+  });
+}
+
 export function useMedicineDuplicateCheck(
   params: {
-    name?: string;
-    genericName?: string;
-    brandName?: string;
+    batchNumber?: string;
     excludeId?: string;
   },
   enabled = true
 ) {
-  const hasQuery = Boolean(params.name || params.genericName || params.brandName);
+  const hasQuery = Boolean(params.batchNumber);
 
   return useQuery({
     enabled: enabled && hasQuery,

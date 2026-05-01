@@ -1,3 +1,4 @@
+require('dns').setServers(['8.8.8.8', '8.8.4.4']); // Force Google DNS for SRV resolution
 const mongoose = require('mongoose');
 
 const env = require('../config/env');
@@ -99,6 +100,9 @@ async function connectInstance(instance, label) {
   connectPromise = instance
     .connect(env.mongoUri, {
       serverSelectionTimeoutMS: env.mongoServerSelectionTimeoutMs,
+      connectTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+      family: 4, // Force IPv4 to avoid potential IPv6 resolution issues
       autoIndex: env.nodeEnv !== 'production',
     })
     .then((connection) => {

@@ -216,7 +216,6 @@ export function DashboardScreen() {
           <View style={styles.hero}>
             <AppText variant="caption">{heroCopy.eyebrow}</AppText>
             <AppText variant="title">{heroTitle(role, user?.name)}</AppText>
-            <AppText>{heroCopy.message}</AppText>
             {focusPanel ? <FocusPanel item={focusPanel} onPress={(route) => router.push(route)} /> : null}
             <View style={styles.heroMeta}>
               <MetaPill icon="person-circle-outline" text={getRoleLabel(user?.role)} accent />
@@ -235,7 +234,7 @@ export function DashboardScreen() {
 
         {alertsFirst && alerts.length ? (
           <AppCard variant="subtle">
-            <SectionTitle title="Priority alerts" subtitle={alertSubtitle(role)} />
+            <SectionTitle title="Priority alerts" />
             <View style={styles.alertList}>
               {alerts.map((item) => {
                 const route = item.route;
@@ -254,7 +253,7 @@ export function DashboardScreen() {
 
         {quickActions.length ? (
           <View style={styles.section}>
-            <SectionTitle title={quickTitle(role)} subtitle={quickSubtitle(role)} />
+            <SectionTitle title={quickTitle(role)} />
             <View style={styles.grid}>
               {quickActions.map((item) => (
                 <QuickActionCard
@@ -270,7 +269,7 @@ export function DashboardScreen() {
 
         {!alertsFirst && alerts.length ? (
           <AppCard variant="subtle">
-            <SectionTitle title="Priority alerts" subtitle={alertSubtitle(role)} />
+            <SectionTitle title="Priority alerts" />
             <View style={styles.alertList}>
               {alerts.map((item) => {
                 const route = item.route;
@@ -291,7 +290,7 @@ export function DashboardScreen() {
 
         {summary ? (
           <AppCard variant="subtle">
-            <SectionTitle title={summaryTitle(role)} subtitle={summarySubtitle(role)} />
+            <SectionTitle title={summaryTitle(role)} />
             <View style={styles.summaryGrid}>
               {getSummaryRows(summary, role).map((item) => (
                 <DetailField
@@ -309,7 +308,6 @@ export function DashboardScreen() {
           <AppCard variant="subtle">
             <SectionTitle
               title={role === appRoles.cashier ? 'Counter favourites' : 'Fast-moving medicines'}
-              subtitle={role === appRoles.cashier ? 'Useful for faster sales lookup.' : 'Useful for stocking and reordering decisions.'}
             />
             <View style={styles.list}>
               {fastMoving.length ? (
@@ -332,7 +330,7 @@ export function DashboardScreen() {
 
         {activity.length ? (
           <AppCard variant="subtle">
-            <SectionTitle title={activityTitle(role)} subtitle={activitySubtitle(role)} />
+            <SectionTitle title={activityTitle(role)} />
             <View style={styles.list}>
               {activity.map((item) => (
                 <RowPair
@@ -606,10 +604,6 @@ function getPulseCard(summary: DashboardSummary, role: Role): PulseCardItem | nu
   if (role === appRoles.cashier || role === appRoles.pharmacist || role === appRoles.admin) {
     return {
       title: role === appRoles.cashier ? 'Recent sales pulse' : 'Sales pulse',
-      subtitle:
-        role === appRoles.cashier
-          ? 'Keep the counter moving without opening full reports.'
-          : 'Revenue and dispensing movement condensed for a quick read.',
       icon: 'pulse-outline',
       rows: [
         { label: 'Today revenue', value: formatDashboardCurrency(summary.salesSummary.today.totalSales) },
@@ -623,7 +617,6 @@ function getPulseCard(summary: DashboardSummary, role: Role): PulseCardItem | nu
   if (role === appRoles.inventoryManager || role === appRoles.purchasingManager || role === appRoles.supplierManager) {
     return {
       title: 'Procurement pulse',
-      subtitle: 'Receiving and order movement that affect stock continuity.',
       icon: 'bag-check-outline',
       rows: [
         { label: 'Open orders', value: String(summary.purchaseSummary.openOrders) },
@@ -793,7 +786,6 @@ function FocusPanel({ item, onPress }: { item: FocusPanelItem; onPress: (route: 
         </View>
         <View style={styles.focusPanelCopy}>
           <AppText variant="label">{item.title}</AppText>
-          <AppText variant="caption">{item.message}</AppText>
         </View>
       </View>
       <View style={styles.focusActions}>

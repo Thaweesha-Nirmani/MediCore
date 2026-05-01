@@ -26,7 +26,12 @@ function escapeRegex(value) {
 }
 
 function baseFilter({ includeArchived = false } = {}) {
-  return includeArchived ? {} : { active: true };
+  if (includeArchived) {
+    return {};
+  }
+  return {
+    $or: [{ active: true }, { active: { $exists: false } }],
+  };
 }
 
 async function findMedicineOrThrow(id) {

@@ -376,9 +376,9 @@ export function MedicinesListScreen() {
           />
         ) : (
           <View style={styles.mobileList}>
-            {items.map((item) => (
+            {items.map((item, index) => (
               <MobileMedicineCard
-                key={item.id}
+                key={`${item.id}-${index}`}
                 item={item}
                 permissions={permissions}
                 onOpen={() => router.push(`/(tabs)/medicines/${item.id}` as Href)}
@@ -441,9 +441,9 @@ function MedicineTable({
         <HeaderCell label="Actions" flex={1.55} align="right" />
       </View>
 
-      {items.map((item) => (
+      {items.map((item, index) => (
         <MedicineTableRow
-          key={item.id}
+          key={`${item.id}-${index}`}
           item={item}
           permissions={permissions}
           onOpen={() => onOpen(item.id)}
