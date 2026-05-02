@@ -70,7 +70,7 @@ type PulseRow = {
 };
 type PulseCardItem = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   icon: React.ComponentProps<typeof Ionicons>['name'];
   rows: PulseRow[];
 };
@@ -234,7 +234,7 @@ export function DashboardScreen() {
 
         {alertsFirst && alerts.length ? (
           <AppCard variant="subtle">
-            <SectionTitle title="Priority alerts" />
+            <SectionTitle subtitle={alertSubtitle(role)} title="Priority alerts" />
             <View style={styles.alertList}>
               {alerts.map((item) => {
                 const route = item.route;
@@ -253,7 +253,7 @@ export function DashboardScreen() {
 
         {quickActions.length ? (
           <View style={styles.section}>
-            <SectionTitle title={quickTitle(role)} />
+            <SectionTitle subtitle={quickSubtitle(role)} title={quickTitle(role)} />
             <View style={styles.grid}>
               {quickActions.map((item) => (
                 <QuickActionCard
@@ -269,7 +269,7 @@ export function DashboardScreen() {
 
         {!alertsFirst && alerts.length ? (
           <AppCard variant="subtle">
-            <SectionTitle title="Priority alerts" />
+            <SectionTitle subtitle={alertSubtitle(role)} title="Priority alerts" />
             <View style={styles.alertList}>
               {alerts.map((item) => {
                 const route = item.route;
@@ -290,7 +290,7 @@ export function DashboardScreen() {
 
         {summary ? (
           <AppCard variant="subtle">
-            <SectionTitle title={summaryTitle(role)} />
+            <SectionTitle subtitle={summarySubtitle(role)} title={summaryTitle(role)} />
             <View style={styles.summaryGrid}>
               {getSummaryRows(summary, role).map((item) => (
                 <DetailField
@@ -307,6 +307,7 @@ export function DashboardScreen() {
         {showFastMoving(role) ? (
           <AppCard variant="subtle">
             <SectionTitle
+              subtitle={role === appRoles.cashier ? 'Most frequently billed medicines' : 'Medicines with highest turnover'}
               title={role === appRoles.cashier ? 'Counter favourites' : 'Fast-moving medicines'}
             />
             <View style={styles.list}>
@@ -330,7 +331,7 @@ export function DashboardScreen() {
 
         {activity.length ? (
           <AppCard variant="subtle">
-            <SectionTitle title={activityTitle(role)} />
+            <SectionTitle subtitle={activitySubtitle(role)} title={activityTitle(role)} />
             <View style={styles.list}>
               {activity.map((item) => (
                 <RowPair
@@ -604,6 +605,7 @@ function getPulseCard(summary: DashboardSummary, role: Role): PulseCardItem | nu
   if (role === appRoles.cashier || role === appRoles.pharmacist || role === appRoles.admin) {
     return {
       title: role === appRoles.cashier ? 'Recent sales pulse' : 'Sales pulse',
+      subtitle: 'Real-time commerce flow',
       icon: 'pulse-outline',
       rows: [
         { label: 'Today revenue', value: formatDashboardCurrency(summary.salesSummary.today.totalSales) },
@@ -617,6 +619,7 @@ function getPulseCard(summary: DashboardSummary, role: Role): PulseCardItem | nu
   if (role === appRoles.inventoryManager || role === appRoles.purchasingManager || role === appRoles.supplierManager) {
     return {
       title: 'Procurement pulse',
+      subtitle: 'Supply chain signals',
       icon: 'bag-check-outline',
       rows: [
         { label: 'Open orders', value: String(summary.purchaseSummary.openOrders) },
@@ -840,7 +843,7 @@ function PulseCard({
       <View style={styles.pulseHeader}>
         <View style={styles.pulseHeaderCopy}>
           <AppText variant="subtitle">{item.title}</AppText>
-          <AppText variant="caption">{item.subtitle}</AppText>
+          {item.subtitle ? <AppText variant="caption">{item.subtitle}</AppText> : null}
         </View>
         <View
           style={[
@@ -864,11 +867,11 @@ function PulseCard({
   );
 }
 
-function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) {
+function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <View style={styles.sectionHeader}>
       <AppText variant="subtitle">{title}</AppText>
-      <AppText variant="caption">{subtitle}</AppText>
+      {subtitle ? <AppText variant="caption">{subtitle}</AppText> : null}
     </View>
   );
 }
