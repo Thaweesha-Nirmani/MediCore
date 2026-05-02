@@ -16,9 +16,23 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {},
+    "android": {
+      "package": "com.thaweesha.medicore"
+    },
     "web": {
       "bundler": "metro"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1d84a7e5-2ec2-4bcf-9a6a-4874be990b4f"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1d84a7e5-2ec2-4bcf-9a6a-4874be990b4f"
     }
   }
 }

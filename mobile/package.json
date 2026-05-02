@@ -2,7 +2,7 @@
   "name": "medicore-mobile",
   "private": true,
   "version": "0.1.0",
-  "main": "App.js",
+  "main": "expo-router/entry",
   "description": "Mobile client for the MediCore pharmacy system built with Expo and React Native.",
   "scripts": {
     "start": "expo start",
@@ -24,6 +24,7 @@
     "expo-router": "55.0.10",
     "expo-secure-store": "55.0.11",
     "expo-status-bar": "55.0.5",
+    "expo-updates": "~55.0.21",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-native": "0.83.4",

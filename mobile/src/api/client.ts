@@ -44,6 +44,14 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (!error?.response) {
+      console.error('[API] Network Error Details:', {
+        message: error.message,
+        code: error.code,
+        configUrl: error.config?.url,
+        baseURL: error.config?.baseURL,
+        apiBaseUrl: env.apiBaseUrl,
+        isApiBaseUrlConfigured: env.isApiBaseUrlConfigured,
+      });
       return Promise.reject(
         new ApiError(NETWORK_MESSAGE, {
           status: 503,
