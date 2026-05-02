@@ -10,5 +10,9 @@
     "backend": "npm run start:backend",
     "mobile": "npm run start:mobile",
     "smoke": "node scripts/qa/system-smoke.js"
+  },
+  "dependencies": {
+    "expo": "^55.0.19",
+    "expo-updates": "~55.0.21"
   }
 }
